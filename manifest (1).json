@@ -1,0 +1,11 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Venoz Klinik Asistan",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Venoz",
+  "start_url": "/",
+  "theme_color": "#ffffff"
+}
