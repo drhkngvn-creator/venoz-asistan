@@ -11,20 +11,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java (Direct)
+      - name: Set up Java
         run: |
           sudo apt-get update
           sudo apt-get install -y openjdk-17-jdk
           echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $GITHUB_ENV
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.19.x'
-          channel: 'stable'
+      - name: Install Flutter Manually
+        run: |
+          git clone https://github.com/flutter/flutter.git -b stable --depth 1 _flutter
+          echo "$GITHUB_WORKSPACE/_flutter/bin" >> $GITHUB_PATH
 
-      - name: Install dependencies
-        run: flutter pub get
+      - name: Doctor & Dependencies
+        run: |
+          flutter doctor
+          flutter pub get
 
       - name: Build APK
         run: flutter build apk --release
