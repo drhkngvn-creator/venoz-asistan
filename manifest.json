@@ -1,0 +1,15 @@
+{
+  "name": "Venoz Klinik Asistan",
+  "short_name": "VenozApp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#ff7f00",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/512/cadavre.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
